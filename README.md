@@ -4,6 +4,8 @@ Search for gold in text files
 
 This is my experiment of asking ChatGPT to help me write a Rust tool to hunt for gold in text files.  The inital steps are pretty basic, and I ask ChatGPT to help me build in more complex functionality.
 
+NOTE: This tool should be used for authorized testing and/or educational purposes only.
+
 In rust, how do I find all the text files in my current directory?
 
 ```rust
