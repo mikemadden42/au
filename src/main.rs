@@ -1,8 +1,8 @@
+use rayon::prelude::*;
 use regex::Regex;
 use std::fs;
 use std::io::{self, BufRead};
 use std::path::Path;
-use rayon::prelude::*;
 
 fn common_password_and_token_patterns() -> Vec<Regex> {
     vec![
@@ -76,25 +76,25 @@ fn common_password_and_token_patterns() -> Vec<Regex> {
 
         // Date (YYYY-MM-DD)
         Regex::new(r"\d{4}-\d{2}-\d{2}").expect("Invalid regex pattern"),
-        
+
         // Bank Account Numbers (International)
         Regex::new(r"^[0-9]{8,20}$").expect("Invalid regex pattern"),
-        
+
         // Passport Numbers (e.g., U.S. passport number)
         Regex::new(r"^[0-9A-Za-z]{7,9}$").expect("Invalid regex pattern"),
-        
+
         // Healthcare Identification Numbers (e.g., SSN in the U.S.)
         Regex::new(r"\d{3}-\d{2}-\d{4}").expect("Invalid regex pattern"),
-        
+
         // Vehicle Identification Numbers (VIN)
         Regex::new(r"[A-HJ-NPR-Z0-9]{17}").expect("Invalid regex pattern"),
-        
+
         // Phone Numbers (International)
         Regex::new(r"(\d{3}-\d{3}-\d{4}|\(\d{3}\) \d{3}-\d{4})").expect("Invalid regex pattern"),
-        
+
         // URLs (HTTP/HTTPS)
         Regex::new(r"https?://[^\s/$.?#].[^\s]*").expect("Invalid regex pattern"),
-        
+
         // Add your additional patterns here
     ]
 }
