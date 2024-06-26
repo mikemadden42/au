@@ -63,7 +63,7 @@ fn common_password_and_token_patterns() -> Vec<Regex> {
         Regex::new(r"^(0[1-9]|1[0-2])/(2[2-9]|[3-9][0-9])$").expect("Invalid regex pattern"),
 
         // URLs (HTTP/HTTPS)
-        Regex::new(r"https?://[^\s/$.?#].[^\s]*").expect("Invalid regex pattern"),
+        Regex::new(r"https?://[^\s/$.?#].\S*").expect("Invalid regex pattern"),
 
         // Social Security Numbers (SSN)
         Regex::new(r"\d{3}-\d{2}-\d{4}").expect("Invalid regex pattern"),
@@ -93,7 +93,7 @@ fn common_password_and_token_patterns() -> Vec<Regex> {
         Regex::new(r"(\d{3}-\d{3}-\d{4}|\(\d{3}\) \d{3}-\d{4})").expect("Invalid regex pattern"),
 
         // URLs (HTTP/HTTPS)
-        Regex::new(r"https?://[^\s/$.?#].[^\s]*").expect("Invalid regex pattern"),
+        Regex::new(r"https?://[^\s/$.?#].\S*").expect("Invalid regex pattern"),
 
         // Add your additional patterns here
     ]
