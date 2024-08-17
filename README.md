@@ -895,3 +895,5 @@ fn main() {
     find_and_print_matching_lines(&current_dir, &patterns);
 }
 ```
+
+MSRV: 1.74.1
