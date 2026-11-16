@@ -1,16 +1,18 @@
 [package]
 name = "au"
-version = "0.1.0"
-edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+version = "0.2.0"
+edition = "2024"
+description = "Search for gold (secrets and PII) in text files"
+license = "MIT"
 
 [dependencies]
-clap = "4.5.40"
-rayon = "1.10.0"
-regex = "1.11.1"
+clap = { version = "4.6.7", features = ["derive"] }
+ignore = "0.4.34"
+regex = "1.13.1"
+
+[dev-dependencies]
+tempfile = "3.27.0"
 
 [profile.release]
 codegen-units = 1
 lto = "thin"
-opt-level = "z"
